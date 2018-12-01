@@ -29,6 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Docker Nginx Deployment
 ng build --prod
+
 docker image build -t my-angular-app .
 
 docker run -p 3000:80 --rm my-angular-app
@@ -36,6 +37,8 @@ docker run -p 3000:80 --rm my-angular-app
 OR
 
 docker-compose up -d
+
+App will be running on http://localhost:3000
 
 Then to down it and reset
 
