@@ -1,0 +1,15 @@
+FROM ubuntu:angular-7-install AS build-env
+LABEL maintainer="Eric Riddle <e-riddle@hotmail.com>"
+WORKDIR /publish
+
+COPY . ./
+#RUN rm -r dist
+RUN npm install
+RUN ng build --prod
+
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+COPY --from=build-env /publish/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build-env /publish/dist/my-angular-app .
+
+
