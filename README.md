@@ -125,7 +125,7 @@ RUN apt-get update && \
     mkdir publish
 ```
 
-### Build the Build Image
+Build the Build Image
 ```
 docker build --rm -f Dockerfile -t ubuntu:angular-7-install .
 ```
@@ -148,7 +148,7 @@ COPY --from=build-env /publish/dist/my-angular-app .
 ```
 
 
-### Run Nginx Build and run
+Run Nginx Build and run
 ```
 docker build --rm -f Dockerfile-build -t nginx:my-angular-app2 .
 
