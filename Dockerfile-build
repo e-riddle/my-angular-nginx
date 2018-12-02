@@ -3,7 +3,7 @@ LABEL maintainer="Eric Riddle <e-riddle@hotmail.com>"
 WORKDIR /publish
 
 COPY . ./
-#RUN rm -r dist
+#RUN rm -rf dist
 RUN npm install
 RUN ng build --prod
 
