@@ -132,6 +132,8 @@ docker build --rm -f Dockerfile -t ubuntu:angular-7-install .
 Make sure build image has all of the needed software
 ```
 docker run -it ubuntu:angular-7-install /bin/bash
+
+docker run --rm -it -v `pwd`:/developer ubuntu:angular-7-install /bin/bash
 ```
 
 Nginx DockerFile Contents
